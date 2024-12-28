@@ -32,10 +32,12 @@ export default function Home() {
       <Background />
       <div className="relative z-10">
         <header className="flex justify-between items-center p-6">
-          <h1 className="text-4xl font-bold text-white">EXCEL PLAY</h1>
+          {/* <h1 className="text-4xl font-bold text-white">EXCEL PLAY</h1> */}
+          <img src="/assets/excel-logo.png" alt="Logo" className="h-20 w-30"/>
+          <img src="/assets/play2022.png" alt="Center Logo" className="h-50 w-50 mx-auto"/>
           <LoginButton />
         </header>
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {games.map((game) => (
               <GameCard key={game.title} {...game} />
