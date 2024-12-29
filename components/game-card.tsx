@@ -3,6 +3,8 @@
 import { Brain, Gamepad, CaseSensitive as LetterCaseCapital } from 'lucide-react';
 import Link from 'next/link';
 
+//type IconType = "brain" | "gamepad" | "letters";
+
 interface GameCardProps {
   title: string;
   rank: number;
