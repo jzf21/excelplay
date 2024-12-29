@@ -3,7 +3,7 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useMemo, useRef } from 'react'
 import * as THREE from 'three'
-import { Environment, Sphere } from '@react-three/drei'
+import { Environment } from '@react-three/drei'
 
 function GlowingSphere() {
   const pointsRef = useRef<THREE.Points>(null)
