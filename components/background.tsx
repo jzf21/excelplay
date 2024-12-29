@@ -58,7 +58,7 @@ function GlowingSphere() {
 export default function Background() {
   return (
     <div className="fixed inset-0">
-      <Canvas camera={{ position: [0, 0, 5] }}>
+      <Canvas camera={{ position: [5, 0, 5] }}>
         <Environment preset="night" />
         <GlowingSphere />
         <ambientLight intensity={0.5} />

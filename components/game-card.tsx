@@ -3,10 +3,9 @@
 import { Brain, Gamepad, CaseSensitive as LetterCaseCapital } from 'lucide-react';
 import Link from 'next/link';
 
-//type IconType = "brain" | "gamepad" | "letters";
-
 interface GameCardProps {
   title: string;
+
   rank: number;
   href: string;
   idx: number;
@@ -33,10 +32,10 @@ export function GameCard({ title, rank, href ,idx}: GameCardProps) {
           <Icon className="h-6 w-6 text-purple-200" />
         </div>
         <div className="space-y-1">
-          <h3 className="text-xl font-bold text-purple-50">{title}</h3>
-          <p className="text-sm text-purple-200">RANK {rank}</p>
+          <h3 className="text-3xl font-bold text-purple-50">{title}</h3>
+          <p className="text-xl text-purple-200">RANK {rank}</p>
         </div>
-        <button className="rounded-full bg-purple-600 px-4 py-1 text-sm font-medium text-white transition-colors hover:bg-purple-500">
+        <button className="rounded-full bg-purple-600 px-4 py-1 text-lg font-medium text-white transition-colors hover:bg-purple-500">
           Play Now
         </button>
       </div>
