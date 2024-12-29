@@ -5,20 +5,21 @@ import Link from 'next/link';
 
 interface GameCardProps {
   title: string;
-  icon: 'brain' | 'gamepad' | 'letters'; // Restrict to valid keys
   rank: number;
   href: string;
+  idx: number;
 }
 
-export function GameCard({ title, icon, rank, href }: GameCardProps) {
-  const iconMap = {
-    brain: Brain,
-    gamepad: Gamepad,
-    letters: LetterCaseCapital,
-  };
+export function GameCard({ title, rank, href ,idx}: GameCardProps) {
+  const arr=[Brain, Gamepad, LetterCaseCapital];
+  // const iconMap = {
+  //   brain: Brain,
+  //   gamepad: Gamepad,
+  //   letters: LetterCaseCapital,
+  // };
 
   // Select the appropriate icon or provide a fallback
-  const Icon = iconMap[icon] ?? (() => <span className="text-red-500">Invalid Icon</span>);
+  const Icon = arr[idx] ?? (() => <span className="text-red-500">Invalid Icon</span>);
 
   return (
     <Link
