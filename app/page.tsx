@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import { GameCard } from '@/components/game-card'
 import { LoginButton } from '@/components/login-button'
 import localFont from 'next/font/local';
-import Loader from '@/components/loader';
+// import Loader from '@/components/loader';
 // Import the Background component dynamically to avoid SSR issues
 const Background = dynamic(() => import('@/components/background'), { ssr: false })
   const starJedi = localFont({
