@@ -43,14 +43,14 @@ function GlowingSphere() {
           opacity={0.8}
         />
       </points>
-      <Sphere args={[1.5, 32, 32]}>
+      {/* <Sphere args={[1.5, 32, 32]}>
         <meshStandardMaterial
-          color="#a78bfa"
+          color="#855ef8"
           emissive="#a78bfa"
-          emissiveIntensity={2}
+          emissiveIntensity={1.5}
           toneMapped={false}
         />
-      </Sphere>
+      </Sphere> */}
     </>
   )
 }
@@ -58,7 +58,7 @@ function GlowingSphere() {
 export default function Background() {
   return (
     <div className="fixed inset-0">
-      <Canvas camera={{ position: [5, 0, 5] }}>
+      <Canvas camera={{ position: [2, 0, 5] }}>
         <Environment preset="night" />
         <GlowingSphere />
         <ambientLight intensity={0.5} />
