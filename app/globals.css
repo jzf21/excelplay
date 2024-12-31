@@ -1,10 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.cdnfonts.com/css/esportiva");
 @font-face {
-  font-family: "starwars";
-  src: url("./fonts/SfDistantGalaxyAltoutline-e2Bp.ttf");
+  font-family: "Esportiva";
+  src: url("./fonts/Esportiva-8M0OM.ttf");
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -82,12 +82,10 @@ body {
 }
 
 h1 {
-  font-family: "starwars";
-
+  font-family: "Esportiva", sans-serif;
+  letter-spacing:2px;
   color: var(--primary);
-
 }
-
 
 .text {
   fill: none;
@@ -141,7 +139,7 @@ h1 {
 }
 
 /* Other styles */
-html, body {
+/* html, body {
   height: 100%;
 }
 
@@ -151,7 +149,7 @@ body {
   font: 14.5em/1 Open Sans, Impact;
   text-transform: uppercase;
   margin: 0;
-}
+} */
 
 /* svg {
   position: absolute;
