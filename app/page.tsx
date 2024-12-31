@@ -49,7 +49,7 @@ export default function Home() {
         </header>
         <div className="container   h-[80%]  mx-auto px-4 py-12 ">
          {/* <Image src={logo} alt="logo" width={200} height={200} /> */}
-          <h1 className="text-6xl font-bold text-white text-center my-6">play now</h1>
+          <h1 className="text-6xl font-bold text-white text-center my-6">Excel Play</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto ">
             {games.map((game) => (
               <GameCard key={game.title} {...game} />
