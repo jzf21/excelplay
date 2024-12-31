@@ -35,7 +35,7 @@ export function GameCard({ title, rank, href ,idx}: GameCardProps) {
           <h3 className="text-3xl font-bold text-purple-50">{title}</h3>
           <p className="text-xl text-purple-200">RANK {rank}</p>
         </div>
-        <button className="rounded-full bg-purple-600 px-4 py-1 text-lg font-medium text-white transition-colors hover:bg-purple-500">
+        <button className="rounded-sm bg-purple-600 px-4 py-1 text-lg font-medium text-white transition-colors hover:bg-purple-500">
           Play Now
         </button>
       </div>
