@@ -1,7 +1,7 @@
 'use client'
 
-import { Canvas, useFrame } from '@react-three/fiber'
-import { useMemo, useRef } from 'react'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { useMemo, useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
 import { Environment } from '@react-three/drei'
 
@@ -43,16 +43,35 @@ function GlowingSphere() {
           opacity={0.8}
         />
       </points>
-      {/* <Sphere args={[1.5, 32, 32]}>
-        <meshStandardMaterial
-          color="#855ef8"
-          emissive="#a78bfa"
-          emissiveIntensity={1.5}
-          toneMapped={false}
-        />
-      </Sphere> */}
     </>
   )
+}
+
+function ParallaxEffect() {
+  const { camera } = useThree()
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setMouse({
+        x: (event.clientX / window.innerWidth) * 1.5 - 1,
+        y: -(event.clientY / window.innerHeight) * 1.5 + 1,
+      })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
+
+  useFrame(() => {
+    camera.position.x += (mouse.x * 2 - camera.position.x) * 0.05
+    camera.position.y += (mouse.y * 2 - camera.position.y) * 0.05
+    camera.lookAt(0, 0, 0)
+  })
+
+  return null
 }
 
 export default function Background() {
@@ -61,9 +80,9 @@ export default function Background() {
       <Canvas camera={{ position: [2, 0, 5] }}>
         <Environment preset="night" />
         <GlowingSphere />
+        <ParallaxEffect />
         <ambientLight intensity={0.5} />
       </Canvas>
     </div>
   )
 }
-
